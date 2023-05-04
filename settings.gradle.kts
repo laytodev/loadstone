@@ -4,5 +4,8 @@ plugins {
 
 rootProject.name = "loadstone"
 
+include(":toolbox")
+include(":toolbox:asm")
+
 include(":server")
 include(":server:cache")
