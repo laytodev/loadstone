@@ -4,6 +4,7 @@ import dev.loadstone.toolbox.asm.tree.ClassGroup
 import dev.loadstone.toolbox.asm.tree.ignored
 import dev.loadstone.toolbox.deobfuscator.transformer.ControlFlowTransformer
 import dev.loadstone.toolbox.deobfuscator.transformer.DeadCodeTransformer
+import dev.loadstone.toolbox.deobfuscator.transformer.RenameTransformer
 import dev.loadstone.toolbox.deobfuscator.transformer.RuntimeExceptionTransformer
 import org.tinylog.kotlin.Logger
 import java.io.File
@@ -30,6 +31,7 @@ class Deobfuscator(
         register<RuntimeExceptionTransformer>()
         register<DeadCodeTransformer>()
         register<ControlFlowTransformer>()
+        register<RenameTransformer>()
 
         Logger.info("Registered ${transformers.size} bytecode transformers.")
     }

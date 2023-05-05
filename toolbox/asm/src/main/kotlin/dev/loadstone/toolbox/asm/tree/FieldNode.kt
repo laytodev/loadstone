@@ -3,6 +3,7 @@ package dev.loadstone.toolbox.asm.tree
 import dev.loadstone.toolbox.asm.util.field
 import org.objectweb.asm.Type
 import org.objectweb.asm.tree.ClassNode
+import org.objectweb.asm.tree.FieldInsnNode
 import org.objectweb.asm.tree.FieldNode
 import java.lang.reflect.Modifier
 

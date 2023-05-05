@@ -1,6 +1,7 @@
 package dev.loadstone.toolbox.asm.tree
 
 import dev.loadstone.toolbox.asm.util.field
+import dev.loadstone.toolbox.asm.util.nullField
 import org.objectweb.asm.ClassReader
 import org.objectweb.asm.ClassWriter
 import org.objectweb.asm.Type
@@ -29,3 +30,6 @@ fun ClassNode.toBytes(): ByteArray {
     this.accept(writer)
     return writer.toByteArray()
 }
+
+fun ClassNode.getMethod(name: String, desc: String) = methods.firstOrNull { it.name == name && it.desc == desc }
+fun ClassNode.getField(name: String, desc: String) = fields.firstOrNull { it.name == name && it.desc == desc }

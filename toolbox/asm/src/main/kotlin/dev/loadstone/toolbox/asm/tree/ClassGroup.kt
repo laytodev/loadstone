@@ -32,6 +32,7 @@ class ClassGroup {
 
     fun getClass(name: String) = classes.firstOrNull { it.name == name }
     fun getIgnoredClass(name: String) = ignoredClasses.firstOrNull { it.name == name }
+    fun findClass(name: String) = classList.firstOrNull { it.name == name }
 
     fun clear() {
         classList.clear()
