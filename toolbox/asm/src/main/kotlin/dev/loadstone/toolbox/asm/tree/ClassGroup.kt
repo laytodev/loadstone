@@ -50,11 +50,11 @@ class ClassGroup {
         }
     }
 
-    fun writeJar(file: File) {
+    fun writeJar(file: File, writeIgnored: Boolean = true) {
         if(file.exists()) file.deleteRecursively()
-        file.parentFile.mkdirs()
         JarOutputStream(file.outputStream()).use { jos ->
-            classes.forEach { cls ->
+            allClasses.forEach { cls ->
+                if(!writeIgnored && cls.ignored) return@forEach
                 jos.putNextEntry(JarEntry("${cls.name}.class"))
                 jos.write(cls.toBytes())
                 jos.closeEntry()

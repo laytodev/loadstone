@@ -6,6 +6,7 @@ rootProject.name = "loadstone"
 
 include(":toolbox")
 include(":toolbox:asm")
+include(":toolbox:deobfuscator")
 
 include(":server")
 include(":server:cache")

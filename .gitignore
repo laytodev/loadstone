@@ -4,3 +4,4 @@ build/
 data/
 *.jar
 !gradle-wrapper.jar
+*.log
